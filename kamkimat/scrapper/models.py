@@ -3,7 +3,7 @@ from django.db import models
 #Flipkart mobile category
 class FlipkartMobile(models.Model):
 	product_name = models.CharField(max_length=200)
-	product_sub_name = models.CharField(max_length=200)
+	product_sub_name = models.CharField(max_length=200, blank=True)
 	product_u_id = models.CharField(max_length=200, unique=True)
 	product_m_id = models.CharField(max_length=200, blank=True)
 	product_availability = models.BooleanField()
