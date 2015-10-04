@@ -13,3 +13,6 @@ class FlipkartMobile(models.Model):
 	product_url = models.CharField(max_length=1000)
 	product_scrape_time = models.DateTimeField('Last Update time')
 	product_img_url = models.CharField(max_length=1000)
+
+	def __str__(self):
+		return self.product_name
