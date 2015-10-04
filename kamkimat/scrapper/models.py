@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 #Flipkart mobile category
 class FlipkartMobile(models.Model):
@@ -11,8 +12,10 @@ class FlipkartMobile(models.Model):
 	product_desc = models.CharField(max_length=1000, blank=True)
 	product_specifications= models.CharField(max_length=10000, blank=True)
 	product_url = models.CharField(max_length=1000)
-	product_scrape_time = models.DateTimeField('Last Update time')
+	product_scrape_time = models.DateTimeField(default=datetime.now, blank=True)
 	product_img_url = models.CharField(max_length=1000)
+	product_offer_1 = models.CharField(max_length=1000, blank=True)
+	product_offer_2 = models.CharField(max_length=1000, blank=True)
 
 	def __str__(self):
 		return self.product_name
